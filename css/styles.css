@@ -134,15 +134,18 @@ img {
     padding-top: 32px;
     padding-bottom: 32px;
     color: var(--primary-text-color);
+    text-decoration: none;
 
 
-    transition: opacity var(--animation-duration) var(--animation-timing-function);
+    transition: color var(--animation-duration) var(--animation-timing-function);
 
 }
 
-.menu-link:hover {
+.menu-link:hover,
+.menu-link:focus {
     color: var(--accent-color);
 }
+
 /* blue underline */
 .active {
     color: var(--accent-color);
@@ -162,24 +165,24 @@ img {
     border-radius: 2px;
 
    
-    transition: transform var(--animation-duration) var(--animation-timing-function),
-    opacity var(--animation-duration) var(--animation-timing-function); 
+    transition: transform var(--animation-duration) var(--animation-timing-function);
+    opacity var(--animation-duration) var(--animation-timing-function);  
 
  }
 
 .menu-link::after {
     transform: scaleX(0);
-}
+} 
 .active::after {
     opacity: 1;
-}
-
-.active:hover::after {
-    opacity: 1;
 } 
-.menu-link:hover::after {
+
+ .active:hover::after {
+    opacity: 1;
+}  
+ .menu-link:hover::after {
     transform: scaleX(1);
-} */
+/* }  */
 
 .active::after {
     position: absolute;
@@ -192,8 +195,10 @@ img {
     height: 4px;
     background-color: var(--accent-color);
     border-radius: 2px;
+    
+    /* transition: opacity var(--animation-duration) var(--animation-timing-function),
+    color var(--animation-duration) var(--animation-timing-function); */
 
-      
  }
 
  
@@ -301,11 +306,11 @@ img {
     line-height: 1.8;
     letter-spacing: 0.06em;
 }
-.button:hover,
+/* .button:hover,
 .button:focus {
     color: var(--title-text-color);
     background-color: var(--accent-color);
-}
+} */
 .backdrop {
     position: fixed;
     width: 100%;
@@ -778,23 +783,28 @@ margin-right: 8px;
 .button-secondary {
     border-color: transparent;
     padding: 6px 22px;
-    background: var(--secondary-background-color);
     border-radius: 4px;
     list-style: none;
     /* margin-left: auto;
     margin-right:auto; */
 
+    color: var(--primary-text-color);
+    background-color: var(--secondary-background-color);
 
     font-weight: 500;
     line-height: 1.6;
     text-align: center;
     letter-spacing: 0.03em;
     
-    color: var(--primary-text-color);
- 
-
+    transition: color var(--animation-duration) var(--animation-timing-function),
+    background-color var(--animation-duration) var(--animation-timing-function); 
 }
 
+.button-secondary:hover,
+.button-secondary:focus {
+    color: var(--title-text-color);
+    background-color: var(--accent-color);
+}
 /* .filters .list {
  
     font-weight: 500;
